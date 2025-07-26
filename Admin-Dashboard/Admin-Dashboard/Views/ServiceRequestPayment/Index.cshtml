@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Service Request";
+    ViewBag.pagename = "Service Request";
+}
+
+@model List<ServiceRequestPayment>
+
+<partial name="_Banner" />
+
+<section class="container p-3">
+    <div class="table-container p-5">
+        <table class="Mtable table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Payment Method</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Execution Time</th>
+                    <th scope="col" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr style="margin-bottom:5px;">
+                        <td>@p.Customer.FName @p.Customer.LName</td> 
+                        <td>@p.Service.ServiceName</td>
+                        <td>@string.Join(" ", p.Status.ToString().Split('_'))</td>
+                        <td>@p.Payment.Method.ToString()</td> 
+                        <td>@p.Payment.Status.ToString()</td> 
+                        <td>@p.Payment.Amount</td>
+                        <td>@p.CreatedAt.ToString("yyyy-MM-dd")</td>
+                        <td>@p.ExecutionTime</td>
+                        <td>
+                            <a asp-action="Detail" asp-route-paymentId="@p.PaymentId" asp-route-customerId="@p.CustomerId" asp-route-serviceId="@p.ServiceId" class="btn btn-outline-dark">Detail</a>
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-paymentId="@p.PaymentId" asp-route-customerId="@p.CustomerId" asp-route-serviceId="@p.ServiceId" class="btn btn-outline-success">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>

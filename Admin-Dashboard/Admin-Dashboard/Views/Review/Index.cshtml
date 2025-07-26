@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Review";
+    ViewBag.pagename = "Review";
+}
+@model List<Review>
+<partial name="_Banner" />
+<section "container p-3">
+    <div class="table-container p-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <a class="btn btn-primary" asp-action="ManageViolations">
+                Manage Violations
+            </a>
+        </div>
+        <table class="Mtable table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Artisan Name</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Comment</th>
+                    <th scope="col">ReviewDate</th>
+                    <th scope="col">Contain Violation</th>
+                    <th scope="col" colspan="2"> Buttons</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr style="margin-bottom:5px;">
+                        <td>@c.Customer.FName @c.Customer.LName</td>
+                        <td>@c.Artisan.FName @c.Artisan.LName</td>
+                        <td>@c.Service.ServiceName</td>
+                        <td>@c.Rating</td>
+                        <td>@c.Comment</td>
+                        <td>@c.ReviewDate</td>
+                        <td>@c.isViolate</td>
+                        <td><a asp-action="Details" asp-route-id="@c.Id" class="btn btn-outline-dark">Detail</a></td>
+                        <td><button onclick="confirmDelete(@c.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+<script>
+    function confirmDelete(id) {
+        var confirmation = confirm("Are you sure to delete this Review ?");
+        if (confirmation) {
+            window.location.href = "/Review/Delete/" + id;
+        }
+    }
+</script>
