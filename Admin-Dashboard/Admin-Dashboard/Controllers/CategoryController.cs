@@ -5,7 +5,7 @@ using Admin_Dashboard.Models;
 using Microsoft.AspNetCore.Authorization;
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class CategoryController : Controller
     {
         UnitOFWork UnitOfWorks;

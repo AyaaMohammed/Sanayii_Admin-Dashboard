@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class ContractController : Controller
     {
         private readonly UnitOFWork Unit;

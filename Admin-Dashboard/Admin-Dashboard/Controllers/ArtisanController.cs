@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class ArtisanController : Controller
     {
         private readonly UnitOFWork _unitOfWork;

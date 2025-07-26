@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class PaymentController : Controller
     {
         private readonly ILogger<PaymentController> logger;

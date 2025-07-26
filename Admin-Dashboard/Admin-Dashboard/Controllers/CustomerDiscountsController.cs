@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class CustomerDiscountsController : Controller
     {
         private readonly UnitOFWork Unit;

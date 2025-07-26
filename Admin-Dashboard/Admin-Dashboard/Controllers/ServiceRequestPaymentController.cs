@@ -12,7 +12,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Admin_Dashboard.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class ServiceRequestPaymentController : Controller
     {
         private readonly ILogger<ServiceRequestPaymentController> logger;

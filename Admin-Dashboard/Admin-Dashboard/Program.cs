@@ -90,16 +90,16 @@ app.MapRazorPages();
 if (app.Environment.IsDevelopment())
 {
     using var scope = app.Services.CreateScope();
-    try
-    {
-        var emailSender = scope.ServiceProvider.GetRequiredService<IEmailSender>();
-        await emailSender.SendEmailAsync("test@example.com", "Test Email", "This is a test email");
-        app.Logger.LogInformation("Test email sent successfully");
-    }
-    catch (Exception ex)
-    {
-        app.Logger.LogError(ex, "Error sending test email");
-    }
+    //try
+    //{
+    //    var emailSender = scope.ServiceProvider.GetRequiredService<IEmailSender>();
+    //    await emailSender.SendEmailAsync("test@example.com", "Test Email", "This is a test email");
+    //    app.Logger.LogInformation("Test email sent successfully");
+    //}
+    //catch (Exception ex)
+    //{
+    //    app.Logger.LogError(ex, "Error sending test email");
+    //}
 }
 
 app.Run();
