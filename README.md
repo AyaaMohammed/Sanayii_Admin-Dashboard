@@ -120,14 +120,10 @@ Or create a user and assign the admin role manually in the database.
 
 ## ✅ Features
 
-- JWT + Refresh token authentication (if integrated)  
-- Role-based access (Admin / Viewer)  
-- Manage users and artisans  
-- Approve or reject artisan applications  
-- Monitor service requests and history  
-- Responsive Bootstrap UI  
-- Chat/message log monitoring (if SignalR connected)  
-- Dashboard analytics (optional)  
+--Full CRUD operations on users, artisans, and services
+--Advanced search and filtering across entities
+--AI-powered review filtering using Parity AI
+--Real-time notifications using SignalR
 
 ---
 
