@@ -120,10 +120,10 @@ Or create a user and assign the admin role manually in the database.
 
 ## ✅ Features
 
---Full CRUD operations on users, artisans, and services
---Advanced search and filtering across entities
---AI-powered review filtering using Parity AI
---Real-time notifications using SignalR
+- Full CRUD operations on users, artisans, and services
+- Advanced search and filtering across entities
+- AI-powered review filtering using Parity AI
+- Real-time notifications using SignalR
 
 ---
 
